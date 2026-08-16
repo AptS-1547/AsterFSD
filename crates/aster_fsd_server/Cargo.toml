@@ -1,0 +1,35 @@
+[package]
+name = "aster_fsd_server"
+version.workspace = true
+description = "Supervised multi-listener AsterFSD TCP runtime."
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+publish.workspace = true
+
+[dependencies]
+aster_fsd_codec.workspace = true
+aster_fsd_core.workspace = true
+aster_fsd_model.workspace = true
+aster_fsd_protocol.workspace = true
+bytes.workspace = true
+futures-util.workspace = true
+rand.workspace = true
+tokio.workspace = true
+tokio-util.workspace = true
+tracing.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+aster_fsd_auth.workspace = true
+aster_fsd_protocol_aster.workspace = true
+aster_fsd_protocol_classic.workspace = true
+aster_fsd_protocol_vatsim.workspace = true
+async-trait.workspace = true
+serde_json.workspace = true
+socket2.workspace = true
+
+[lints]
+workspace = true

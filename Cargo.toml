@@ -1,0 +1,159 @@
+[workspace]
+members = [
+    ".",
+    "crates/aster_fsd_auth",
+    "crates/aster_fsd_codec",
+    "crates/aster_fsd_core",
+    "crates/aster_fsd_migration",
+    "crates/aster_fsd_model",
+    "crates/aster_fsd_persistence",
+    "crates/aster_fsd_protocol",
+    "crates/aster_fsd_protocol_aster",
+    "crates/aster_fsd_protocol_classic",
+    "crates/aster_fsd_protocol_vatsim",
+    "crates/aster_fsd_server",
+]
+resolver = "3"
+
+[workspace.package]
+version = "0.2.0"
+authors = [
+    "AptS-1547 <apts-1547@esaps.net>",
+    "AptS-1548 <apts-1548@esaps.net>",
+]
+edition = "2024"
+rust-version = "1.95.0"
+license = "MIT"
+repository = "https://github.com/AsterCommunity/AsterFSD"
+publish = false
+
+[workspace.dependencies]
+argon2 = "0.5.3"
+aster_forge_logging = { git = "https://github.com/AsterCommunity/AsterForge", package = "aster_forge_logging" }
+aster_fsd_auth = { path = "crates/aster_fsd_auth" }
+aster_fsd_codec = { path = "crates/aster_fsd_codec" }
+aster_fsd_core = { path = "crates/aster_fsd_core" }
+aster_fsd_migration = { path = "crates/aster_fsd_migration" }
+aster_fsd_model = { path = "crates/aster_fsd_model" }
+aster_fsd_persistence = { path = "crates/aster_fsd_persistence" }
+aster_fsd_protocol = { path = "crates/aster_fsd_protocol" }
+aster_fsd_protocol_aster = { path = "crates/aster_fsd_protocol_aster" }
+aster_fsd_protocol_classic = { path = "crates/aster_fsd_protocol_classic" }
+aster_fsd_protocol_vatsim = { path = "crates/aster_fsd_protocol_vatsim" }
+aster_fsd_server = { path = "crates/aster_fsd_server" }
+async-trait = "0.1.92"
+bytes = "1.12.1"
+chrono = { version = "0.4.45", default-features = false, features = ["clock", "serde"] }
+futures-util = { version = "0.3.34", features = ["sink"] }
+log = "0.4.33"
+rand = { version = "0.10.2", default-features = false, features = ["std", "std_rng", "thread_rng"] }
+sea-orm = { version = "2.0.2", default-features = false, features = [
+    "macros",
+    "runtime-tokio-rustls",
+    "sqlx-mysql",
+    "sqlx-postgres",
+    "sqlx-sqlite",
+    "with-chrono",
+] }
+sea-orm-migration = { version = "2.0.2", default-features = false, features = [
+    "runtime-tokio-rustls",
+    "sqlx-mysql",
+    "sqlx-postgres",
+    "sqlx-sqlite",
+    "with-chrono",
+] }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.151"
+socket2 = "0.6.5"
+thiserror = "2.0.20"
+tokio = { version = "1.53.1", features = ["full"] }
+tokio-util = { version = "0.7.19", features = ["codec", "rt"] }
+toml = "1.1.4"
+tracing = "0.1.44"
+
+[workspace.lints.rust]
+unsafe_op_in_unsafe_fn = "deny"
+
+[workspace.lints.clippy]
+pedantic = { level = "warn", priority = -1 }
+allow_attributes = "deny"
+allow_attributes_without_reason = "deny"
+cast_possible_truncation = "deny"
+cast_sign_loss = "deny"
+multiple_unsafe_ops_per_block = "deny"
+undocumented_unsafe_blocks = "deny"
+
+[package]
+name = "asterfsd"
+version.workspace = true
+description = "A multi-protocol FSD server runtime"
+authors.workspace = true
+repository.workspace = true
+license.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[lib]
+name = "asterfsd"
+path = "src/lib.rs"
+
+[[bin]]
+name = "asterfsd"
+path = "src/main.rs"
+
+[dependencies]
+aster_forge_logging.workspace = true
+aster_fsd_core.workspace = true
+aster_fsd_persistence.workspace = true
+aster_fsd_protocol.workspace = true
+aster_fsd_protocol_aster.workspace = true
+aster_fsd_protocol_classic.workspace = true
+aster_fsd_protocol_vatsim.workspace = true
+aster_fsd_server.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+tokio.workspace = true
+tokio-util.workspace = true
+toml.workspace = true
+tracing.workspace = true
+
+[profile.dev]
+opt-level = 0
+lto = false
+codegen-units = 256
+debug = 1
+panic = "unwind"
+strip = false
+incremental = true
+
+[profile.dev.package."*"]
+opt-level = 1
+debug = false
+
+[profile.release]
+opt-level = 2
+lto = true
+codegen-units = 1
+debug = 0
+panic = "unwind"
+strip = "debuginfo"
+
+[profile.profiling]
+inherits = "release"
+opt-level = 2
+codegen-units = 1
+debug = true
+strip = false
+lto = false
+panic = "unwind"
+
+[profile.release-performance]
+inherits = "release"
+opt-level = 3
+codegen-units = 1
+panic = "abort"
+strip = true

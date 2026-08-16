@@ -1,0 +1,46 @@
+# Rust build output
+/target/
+**/*.rs.bk
+
+# Runtime state and local overrides
+/config.toml
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+*.log
+/data/
+/logs/
+/tmp/
+/config.local.toml
+/config.*.local.toml
+
+# Python tooling and test clients
+/.venv/
+/venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+/htmlcov/
+
+# Test and profiling output
+/coverage/
+/criterion/
+*.profraw
+*.profdata
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Editors and operating systems
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+*~

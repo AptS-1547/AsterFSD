@@ -1,0 +1,56 @@
+[server]
+name = "AsterFSD"
+version = "0.2.0"
+# 登录成功后发送给客户端的第一条产品信息，可按网络品牌自定义。
+product_message = "AsterFSD 0.2.0"
+max_clients = 1000
+mailbox_capacity = 256
+wind_delta_interval_seconds = 70
+motd = []
+
+[database]
+# SQLite: "sqlite://asterfsd.db" or "sqlite::memory:"
+# PostgreSQL: "postgres://username:password@localhost/database"
+# MySQL: "mysql://username:password@localhost/database"
+url = "sqlite://asterfsd.db"
+max_connections = 100
+min_connections = 5
+
+# SeaORM/SQLx statement logging 与 AsterFSD 应用日志独立，默认关闭。
+sqlx_logging = false
+sqlx_logging_level = "debug"
+
+# Listener 与协议后端显式绑定。默认只开放 classic 6809；按需取消下面其他 listener 的注释。
+[[listeners]]
+name = "classic"
+protocol = "classic"
+address = "0.0.0.0"
+port = 6809
+max_frame_bytes = 511
+idle_timeout_seconds = 500
+
+# [[listeners]]
+# name = "vatsim"
+# protocol = "vatsim"
+# address = "0.0.0.0"
+# port = 6810
+# max_frame_bytes = 4096
+# idle_timeout_seconds = 500
+
+# [[listeners]]
+# name = "aster"
+# protocol = "aster_v1"
+# address = "0.0.0.0"
+# port = 6811
+# max_frame_bytes = 16384
+# idle_timeout_seconds = 500
+
+[logging]
+# 默认保持简单的 info。改为 debug 会启用连接、frame envelope、command、core effect、
+# routing/dispatch 和认证 repository 打点；日志只记录元数据，不记录 password/raw payload。
+# RUST_LOG 拥有更高优先级，发生覆盖时启动日志会明确告警。
+level = "info"
+format = "text"
+file = ""
+enable_rotation = true
+max_backups = 5

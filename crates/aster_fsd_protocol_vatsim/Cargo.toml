@@ -1,0 +1,20 @@
+[package]
+name = "aster_fsd_protocol_vatsim"
+version.workspace = true
+description = "Explicit VATSIM FSD protocol backend."
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+publish.workspace = true
+
+[dependencies]
+aster_fsd_codec.workspace = true
+aster_fsd_model.workspace = true
+aster_fsd_protocol.workspace = true
+aster_fsd_protocol_classic.workspace = true
+tracing.workspace = true
+
+[lints]
+workspace = true

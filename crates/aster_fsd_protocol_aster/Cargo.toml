@@ -1,0 +1,19 @@
+[package]
+name = "aster_fsd_protocol_aster"
+version.workspace = true
+description = "Versioned Aster native protocol backend."
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+publish.workspace = true
+
+[dependencies]
+aster_fsd_model.workspace = true
+aster_fsd_protocol.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+[lints]
+workspace = true

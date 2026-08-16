@@ -1,0 +1,16 @@
+[package]
+name = "aster_fsd_migration"
+version.workspace = true
+description = "AsterFSD database schema migrations."
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+publish.workspace = true
+
+[dependencies]
+sea-orm-migration.workspace = true
+
+[lints]
+workspace = true
