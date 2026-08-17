@@ -43,6 +43,16 @@ crates/
 
 - [`developer-docs/zh-CN/architecture/project-contract.md`](developer-docs/zh-CN/architecture/project-contract.md)
 - [`developer-docs/zh-CN/architecture/index.md`](developer-docs/zh-CN/architecture/index.md)
+- [`developer-docs/zh-CN/architecture/platform-architecture-diagrams.md`](developer-docs/zh-CN/architecture/platform-architecture-diagrams.md)
+- [`developer-docs/zh-CN/architecture/rfcs/0001-asterfsd-platform-architecture.md`](developer-docs/zh-CN/architecture/rfcs/0001-asterfsd-platform-architecture.md)
+- [`developer-docs/zh-CN/architecture/rfcs/0002-technology-stack-and-infrastructure-profiles.md`](developer-docs/zh-CN/architecture/rfcs/0002-technology-stack-and-infrastructure-profiles.md)
+- [`developer-docs/zh-CN/architecture/rfcs/0003-identity-and-trust-architecture.md`](developer-docs/zh-CN/architecture/rfcs/0003-identity-and-trust-architecture.md)
+- [`developer-docs/zh-CN/architecture/rfcs/0004-network-runtime-sharding-and-high-availability.md`](developer-docs/zh-CN/architecture/rfcs/0004-network-runtime-sharding-and-high-availability.md)
+- [`developer-docs/zh-CN/architecture/rfcs/0005-event-model-and-delivery-semantics.md`](developer-docs/zh-CN/architecture/rfcs/0005-event-model-and-delivery-semantics.md)
+- [`developer-docs/zh-CN/architecture/rfcs/0006-history-replay-and-telemetry-architecture.md`](developer-docs/zh-CN/architecture/rfcs/0006-history-replay-and-telemetry-architecture.md)
+- [`developer-docs/zh-CN/architecture/rfcs/0007-activity-and-dispatch-integration.md`](developer-docs/zh-CN/architecture/rfcs/0007-activity-and-dispatch-integration.md)
+- [`developer-docs/zh-CN/architecture/rfcs/0008-weather-airac-and-route-data-plane.md`](developer-docs/zh-CN/architecture/rfcs/0008-weather-airac-and-route-data-plane.md)
+- [`developer-docs/zh-CN/architecture/rfcs/0009-atc-coordination-and-handoff-state-machine.md`](developer-docs/zh-CN/architecture/rfcs/0009-atc-coordination-and-handoff-state-machine.md)
 - [`developer-docs/zh-CN/architecture/protocol-backends.md`](developer-docs/zh-CN/architecture/protocol-backends.md)
 - [`developer-docs/zh-CN/testing/protocol-compatibility.md`](developer-docs/zh-CN/testing/protocol-compatibility.md)
 

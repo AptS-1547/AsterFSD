@@ -1,5 +1,19 @@
 # AsterFSD 架构概览
 
+视觉总览：[AsterFSD Platform Architecture Diagrams](platform-architecture-diagrams.md)。
+
+## RFC
+
+- [RFC-0001：AsterFSD Platform Architecture](rfcs/0001-asterfsd-platform-architecture.md)：平台产品边界、Network Runtime、Identity、History/Projection、gRPC contract、Standalone/Kubernetes Profile、可靠性和企业级运维约束。
+- [RFC-0002：Technology Stack and Infrastructure Profiles](rfcs/0002-technology-stack-and-infrastructure-profiles.md)：Axum/Tower、Tonic、Core NATS/JetStream、数据库、可观测性、Cargo feature 和部署基础设施选型。
+- [RFC-0003：Identity and Trust Architecture](rfcs/0003-identity-and-trust-architecture.md)：Account、Organization、Network Profile、Rating、credential、权限、suspension、embedded/gRPC Identity 和 Gateway admission。
+- [RFC-0004：Network Runtime, Sharding and High Availability](rfcs/0004-network-runtime-sharding-and-high-availability.md)：Gateway/Runtime shard、Network Directory、callsign ownership、epoch fencing、跨 shard routing、drain、snapshot 和高可用语义。
+- [RFC-0005：Event Model and Delivery Semantics](rfcs/0005-event-model-and-delivery-semantics.md)：Command/Query/Effect、realtime delta、durable domain event、outbox、幂等、顺序、schema 演进、Core NATS/JetStream 和 replay 语义。
+- [RFC-0006：History, Replay and Telemetry Architecture](rfcs/0006-history-replay-and-telemetry-architecture.md)：History ownership、TrackChunk、采样、telemetry ingest、PostgreSQL/ClickHouse/S3、retention、gap 和 replay consistency。
+- [RFC-0007：Activity and Dispatch Integration](rfcs/0007-activity-and-dispatch-integration.md)：Activity lifecycle、registration/slot/assignment、Runtime policy projection、Dispatch Release revision、Weather/AIRAC 引用和 Network filing。
+- [RFC-0008：Weather, AIRAC and Route Data Plane](rfcs/0008-weather-airac-and-route-data-plane.md)：Weather provenance/freshness、immutable AIRAC generation、Network overlay、Route Service、provider sync、atomic activation 和 Dispatch reference。
+- [RFC-0009：ATC Coordination and Handoff State Machine](rfcs/0009-atc-coordination-and-handoff-state-machine.md)：Controller jurisdiction、tracking ownership、typed handoff、cross-shard coordination、disconnect/timeout 和 Classic/VATSIM/Aster mapping。
+
 ## 60 秒版本
 
 - 根 `asterfsd` 只装配配置、日志、数据库和 runtime。
